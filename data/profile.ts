@@ -10,7 +10,7 @@ const profile = {
 
   gpa: "3.72 / 4.00",
 
-  image: "/images/profile/profile.jpg",
+  image: "/images/profile/profile.png",
 
   cv: "/cv.pdf",
 };
