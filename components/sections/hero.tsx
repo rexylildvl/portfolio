@@ -85,15 +85,17 @@ export default function Hero() {
           {/* Glow Effect */}
           <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-indigo-400/20 via-purple-400/15 to-pink-400/20 blur-2xl animate-pulse" />
 
-          <div className="relative rounded-full p-1 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 shadow-2xl shadow-purple-300/50">
-            <Image
-              src={profile.image}
-              alt={profile.name}
-              width={400}
-              height={400}
-              priority
-              className="relative h-[200px] w-[200px] rounded-full object-cover ring-4 ring-white md:h-[280px] md:w-[280px] lg:h-[320px] lg:w-[320px]"
-            />
+          <div className="relative h-[200px] w-[200px] overflow-hidden rounded-full bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 p-1 shadow-2xl shadow-purple-300/50 md:h-[280px] md:w-[280px] lg:h-[320px] lg:w-[320px]">
+            <div className="relative h-full w-full overflow-hidden rounded-full ring-4 ring-white">
+              <Image
+                src={profile.image}
+                alt={profile.name}
+                fill
+                priority
+                sizes="(max-width: 768px) 200px, (max-width: 1024px) 280px, 320px"
+                className="object-cover object-center"
+              />
+            </div>
           </div>
 
           {/* Decorative Badge */}
