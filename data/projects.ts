@@ -60,16 +60,6 @@ const projects = [
   },
 
   {
-    title: "GudangIn",
-    description:
-      "An inventory management system for managing products, stock levels, and warehouse operations with an easy-to-use web dashboard.",
-    image: "/images/projects/gudangin.png",
-    technologies: ["Laravel", "PHP", "MySQL"],
-    github: "https://github.com/rexylildvl/GudangIn",
-    demo: "",
-  },
-
-  {
     title: "EcoTalk",
     description:
       "A web application that promotes environmental awareness through educational content and interactive community features.",
