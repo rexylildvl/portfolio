@@ -2,9 +2,9 @@ import { Heart } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-indigo-200/50 py-8 text-center">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col items-center gap-2">
+    <footer className="border-t border-indigo-200/50 py-6 text-center">
+      <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+        <div className="flex flex-col items-center gap-1.5">
           <div className="flex items-center gap-2 text-sm text-gray-500">
             <span>© {new Date().getFullYear()}</span>
             <span className="h-4 w-px bg-indigo-300"></span>

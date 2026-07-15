@@ -32,26 +32,26 @@ export default function Navbar() {
           : "bg-white/60 backdrop-blur-md"
       }`}
     >
-      <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-8">
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6 lg:px-8">
         <Link
           href="/"
-          className="group relative flex items-center gap-2 text-3xl font-black tracking-tight transition-all duration-300"
+          className="group relative flex items-center gap-1.5 text-xl font-black tracking-tight transition-all duration-300"
         >
           <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
             RAIA
           </span>
-          <Sparkles className="h-5 w-5 text-indigo-400 group-hover:rotate-180 transition-transform duration-500" />
-          <span className="absolute -bottom-1 left-0 h-1 w-0 rounded-full bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 transition-all duration-500 group-hover:w-full"></span>
+          <Sparkles className="h-4 w-4 text-indigo-400 group-hover:rotate-180 transition-transform duration-500" />
+          <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 transition-all duration-500 group-hover:w-full"></span>
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-6 md:flex">
           {menus.map((item) => (
             <li key={item.name}>
               <a
                 href={`#${item.name.toLowerCase()}`}
-                className="group relative flex items-center gap-2 text-sm font-medium text-gray-600 transition-all duration-300 hover:text-indigo-600"
+                className="group relative flex items-center gap-1.5 text-xs font-medium text-gray-600 transition-all duration-300 hover:text-indigo-600"
               >
-                <span className="text-xs text-indigo-300 group-hover:text-indigo-500 transition-colors">
+                <span className="text-[10px] text-indigo-300 group-hover:text-indigo-500 transition-colors">
                   {item.icon}
                 </span>
                 <span className="font-mono tracking-wide">{item.name}</span>
@@ -61,26 +61,26 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <button
             onClick={() => setOpen(!open)}
-            className="group relative rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 p-2.5 text-indigo-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-200/50 md:hidden"
+            className="group relative rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 p-2 text-indigo-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-200/50 md:hidden"
             aria-label="Toggle menu"
           >
             <div className="relative">
               {open ? (
-                <X size={20} className="transition-all duration-300 group-hover:rotate-90" />
+                <X size={18} className="transition-all duration-300 group-hover:rotate-90" />
               ) : (
-                <Menu size={20} className="transition-all duration-300 group-hover:rotate-90" />
+                <Menu size={18} className="transition-all duration-300 group-hover:rotate-90" />
               )}
             </div>
           </button>
 
-          <div className="hidden md:flex items-center gap-4">
-            <div className="h-6 w-px bg-gradient-to-b from-transparent via-indigo-200 to-transparent"></div>
+          <div className="hidden md:flex items-center gap-3">
+            <div className="h-5 w-px bg-gradient-to-b from-transparent via-indigo-200 to-transparent"></div>
             <a
               href="#contact"
-              className="rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 px-5 py-2 text-sm font-medium text-white shadow-md shadow-indigo-200/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-300/50"
+              className="rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-1.5 text-xs font-medium text-white shadow-md shadow-indigo-200/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-300/50"
             >
               Let's Talk
             </a>
@@ -91,22 +91,22 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out md:hidden ${
-          open ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="border-t border-indigo-100/30 bg-white/95 backdrop-blur-xl">
-          <div className="space-y-1 px-4 py-4">
+          <div className="space-y-0.5 px-3 py-3">
             {menus.map((item, index) => (
               <a
                 key={item.name}
                 href={`#${item.name.toLowerCase()}`}
                 onClick={() => setOpen(false)}
-                className="group flex items-center gap-3 rounded-xl px-4 py-3.5 text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:pl-6 hover:text-indigo-600"
+                className="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-xs font-medium text-gray-700 transition-all duration-300 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:pl-5 hover:text-indigo-600"
                 style={{
                   animationDelay: `${index * 60}ms`,
                 }}
               >
-                <span className="text-indigo-300 group-hover:text-indigo-500 transition-colors text-base">
+                <span className="text-indigo-300 group-hover:text-indigo-500 transition-colors text-sm">
                   {item.icon}
                 </span>
                 <span className="font-mono tracking-wide">{item.name}</span>
@@ -116,10 +116,10 @@ export default function Navbar() {
               </a>
             ))}
 
-            <div className="mt-4 px-4 pt-4 border-t border-indigo-100/30">
+            <div className="mt-3 px-3 pt-3 border-t border-indigo-100/30">
               <a
                 href="#contact"
-                className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-3 text-sm font-medium text-white shadow-md shadow-indigo-200/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-indigo-300/50"
+                className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 px-3 py-2.5 text-xs font-medium text-white shadow-md shadow-indigo-200/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-indigo-300/50"
               >
                 Let's Talk
               </a>
